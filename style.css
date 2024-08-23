@@ -1,0 +1,226 @@
+
+
+body {
+font-family: 'Roboto', sans-serif;
+font-size: 18px; /* Aumenta el tamaño de la letra */
+line-height: 1.6; /* Mejora el interlineado */
+font-weight: 400; /* Ajusta el grosor de la letra */
+background-color: white;
+background-image: url(assets/fondo.png);
+background-size: cover;
+background-repeat: no-repeat;
+margin: 0%;
+padding: 0%;
+height: 100vh; 
+width: 100vw; 
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+overflow: hidden; 
+}
+
+ .logo-container{
+  position: absolute;
+  top: 20px;
+  left: 20px;
+ }
+ 
+ .logo{
+  width: 200px;
+  height:auto ;
+ }
+ 
+ .input-container {
+    display: flex;
+    justify-content: space-around; /* Mueve el textarea hacia la derecha */;
+    align-items: center;
+    width: 90%;
+    height: calc(100vh - 100px); /* Ajusta la altura para evitar el logo */
+    z-index: 1;
+}
+
+.input-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 40%;
+}
+
+textarea {
+    width: 90%; /* Ajusta el ancho del campo de texto */
+    height: 400px; /* Ajusta la altura del campo de texto */
+    padding: 20px;
+    font-family: 'Roboto', sans-serif; /* Asegúrate de usar la fuente deseada */
+    font-size: 18px; /* Aumenta el tamaño de la letra */
+    line-height: 1.6; /* Mejora el interlineado */
+    font-weight: 400; /* Ajusta el grosor de la letra */
+    border: 2px solid white; /* Borde blanco para mayor contraste */
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo semi-transparente */
+    color: black; /* Color del texto */
+    resize: none; /* Desactiva el redimensionamiento */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra ligera */
+    margin-bottom: 20px;
+}
+
+textarea:focus {
+    outline: none;
+    border-color: #007bff;
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.5);
+}
+
+.info-text {
+    font-family: 'Roboto', sans-serif;
+    font-size: 20px;
+    color: #130505; /* Color gris para un tono más suave */
+    margin-bottom: 10px; /* Espacio entre el texto y los botones */
+    text-align: center; /* Centrar el texto */
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.button-group {
+    display: flex;
+    justify-content: space-between; /* Distribuye espacio entre los botones */
+    width: 100%;
+    max-width: 400px; /* Ajusta el ancho máximo para que los botones no sean demasiado grandes */
+    gap: 20px; /* Espacio entre los botones */
+}
+
+
+button {
+    flex: 1;
+    padding: 15px 30px;
+    font-size: 18px;
+    font-family: 'Roboto' sans-serif;
+    font-weight: 500;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 50px;  /* Bordes redondeados */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease; /* Transiciones suaves */
+    width: 45%;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2); /* Sombra para darle profundidad */
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.5s ease, height 0.5s ease;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+button::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 300%;
+    height: 300%;
+    background: rgba(255, 255, 255, 0.2);
+    transform: translate(-50%, -50%) rotate(45deg);
+    transition: width 0.5s ease, height 0.5s ease;
+    border-radius: 50%;
+    z-index: -1;
+}
+
+button:hover::before {
+    width: 0;
+    height: 0;
+}
+
+button:hover {
+    background-color: #0056b3; /* Cambio de color al pasar el cursor */
+    transform: translateY(-5px); /* Levanta el botón al pasar el cursor */
+}
+
+button:active {
+    transform: translateY(-2px); /* Efecto de presionar */
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+}
+
+button span {
+    position: relative;
+    z-index: 2;
+}
+
+#output-container {
+    width: 40%;
+    height: 600px;
+    padding: 20px;
+    font-size: 16px;
+    border: 2px solid white;
+    border-radius: 10px;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: black;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+.output-image {
+    max-width: 80%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+.output-message {
+    text-align: center;
+    font-size: 18px;
+    color: black;
+}
+/* Media Queries para hacer la página responsiva */
+@media (min-width: 600px) {
+    textarea {
+        height: 200px;
+    }
+
+    .button-group {
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 768px) {
+    .logo {
+        width: 200px;
+    }
+
+    textarea {
+        height: 250px;
+    }
+
+    .output-message {
+        font-size: 18px;
+    }
+}
+
+@media (min-width: 1024px) {
+    .input-container {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #output-container {
+        margin-left: 20px;
+    }
+}
